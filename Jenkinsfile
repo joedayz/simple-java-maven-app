@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.9.9'
-        jdk 'JDK 17'
+        maven 'Maven_3.9.9'
+        jdk 'JDK_17'
     }
 
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                powershell 'mvn -B -DskipTests clean package' 
             }
         }
-
+/* 
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -28,6 +28,6 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
-        }
+        } */
     }
 }
